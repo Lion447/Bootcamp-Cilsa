@@ -1,7 +1,7 @@
 function validarEmail() {
     const emailInput = document.getElementById('emailInput').value;
     const comentarioElement = document.getElementById('revisarEmail');
-    const emailExpresion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailExpresion = /^([a-zA-Z][\w+-]+(?:\.\w+)?)@([\w-]+(?:\.[a-zA-Z]{2,10})+)$/;
   
     if (emailExpresion.test(emailInput)) {
         comentarioElement.textContent = ""; 
