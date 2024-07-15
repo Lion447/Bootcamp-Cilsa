@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body data-bs-theme="light">
+    
+    <div class="d-flex card container-sm mt-2 border-0">
+        <h1 class="display-5">Formulario de Datos Personales</h1>
+
+        <form>
+            <label class="col-md-mb-3 form-control-lg row" class="form-label" for="nombre">Nombre:</label>
+            <input class="form-control mb-3 form-control-lg" type="text" name="nombre" id="nombre" minlength="4" maxlength="20" pattern="[a-z A-Z]*" placeholder="Escribe tu Nombre" required>
+    
+            <label class="col-md-mb-3 form-control-lg row" for="apellido">Apellido:</label>
+            <input class="form-control mb-3 form-control-lg" type="text" name="apellido" id="apellido" minlength="4" maxlength="20" pattern="[a-z A-Z]*" placeholder="Escribe tu Apellido" required>
+    
+            <label class="col-md-mb-3 form-control-lg row" for="emailInput">Email:</label>
+            <input class="form-control mb-3 form-control-lg" type="email" id="emailInput" oninput="validarEmail()" placeholder="Escribe tu Email" required>
+            <span id="revisarEmail" style="color: red;"></span>
+
+            <label class="col-md-mb-3 form-control-lg row" for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" name="fechaNacimiento" id="fechaNacimiento" required>
+    
+            <label class="mt-3 form-control-lg row" for="paisResidencia">País de Residencia:</label>
+            <select class="form-select form-select-lg mb-4" aria-label="Small select example" id="paisResidencia" name="paisResidencia" required>
+                <option value="">Seleccione su país</option>
+                <option value="argentina">Argentina</option>
+            </select>
+    
+            <div class="d-flex flex-column mb-3">
+                <button class="mt-3 btn btn-primary" type="submit">Enviar</button>
+                <button class="mt-3 btn btn-primary " class="cambiar" id="cambiar" onclick="cambiarEstilo('light')">Estilo 1</button>
+                <button class="mt-3 btn btn btn-warning" type="button" class="cambiar" onclick="cambiarEstilo('dark')" id="altoContraste">Estilo de Alto Contraste</button>
+            </div>
+            
+        </form>
+        
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
